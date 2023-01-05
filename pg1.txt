@@ -13,14 +13,12 @@ def aStarAlgo(start_node, stop_node):
 
         for v in open_set: 
             if n == None or g[v] + heuristic(v) < g[n] + heuristic(n):
-                n = v # n='A'
+                n = v 
 
         if n == stop_node or Graph_nodes[n] == None:
             pass
         else:
             for (m, weight) in get_neighbors(n):
-             # nodes 'm' not in first and last set are added to first
-             # n is set its parent
                 if m not in open_set and m not in closed_set:
                     open_set.add(m)      
                     parents[m] = n      
@@ -61,8 +59,8 @@ def aStarAlgo(start_node, stop_node):
 
 
       
-        open_set.remove(n)# {'F','B'} len=2
-        closed_set.add(n) #{A} len=1
+        open_set.remove(n)
+        closed_set.add(n) 
 
     print('Path does not exist!')
     return None
